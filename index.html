@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aplikacja API</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="fav.png" type="image/png" />
+</head>
+
+<body>
+
+  <div id="alertModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Chyba się podoba ! &#128515; </p>
+    </div>
+  </div>
+
+  <div class="top-right">
+    <div id="clock">00:00:00</div>
+    <div id="click-counter">Interakcji na stronie: 0</div>
+  </div>
+
+  <div id="calendarContainer"></div>
+  <div id="countdownContainer">
+    Czas do weekendu: <span id="countdown">00:00:00</span>
+  </div>
+
+  <div class="image-card">
+    <img src="logo.png" alt="Logo apki" />
+  </div>
+  <aside id="delayedMessage" class="hidden">
+    Pamiętaj dopiero sie ucze &#x1F61C;
+  </aside>
+  <div class="button-container">
+    <button id="search_button">Wyszukaj dane</button>
+    <button id="fetch_all_button">Pobierz wszystko</button>
+    <div class="get-variant-container">
+      <label for="get-variant">Wybierz ilość do pobrania: </label>
+      <input id="get-variant" type="number" min="1", max="100", step="1", value="1" />
+      <button id="get_variant_button">Pobierz wybraną ilość</button>
+    </div>
+    <button id="clear_button">Wyczysc</button>
+    <button id="add_more_button">Dodaj więcej</button>
+    <button id="intro_button">Intro</button>
+  </div>
+
+
+  <div id="searchModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <label for="searchInput">Wpisz słowo kluczowe do wyszukiwania:</label>
+      <input type="text" id="searchInput" />
+      <button id="search_modal_button">Wyszukaj</button>
+    </div>
+  </div>
+
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <label for="editTitle">Edytuj tytuł:</label>
+      <input type="text" id="editTitle" />
+    </br>
+      <label for="editBody">Edytuj treść:</label>
+      <input type="text" id="editBody" />
+      <button id="saveEdit">Zapisz</button>
+    </div>
+  </div>
+
+  <div id="introModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <video width="320" height="240" controls>
+        <source src="demo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <div class="data-container">
+    <img id="defaultImage" src="no data.png" alt="brak danych do wyświetlenia" />
+    <ul id="dataList"></ul>
+  </div>
+  <footer class="fixed-footer">
+    <p><strong>Napisz opinie:</p></strong>
+    <textarea placeholder="Wpisz swoją wiadomość..."></textarea>
+    <button id="sendOpinionButton">Wyślij</button>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+
+</html>
